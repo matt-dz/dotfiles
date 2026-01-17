@@ -2,4 +2,9 @@
 
 Setup with [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh).
 
-The files are symlinked and placed in the user's home directory.
+Files are symlinked to the home directory
+
+```sh
+ln -s $(realpath .zshrc) ~/.zshrc
+ln -s $(realpath .zsh_aliases) ~/.zsh_aliases
+```
