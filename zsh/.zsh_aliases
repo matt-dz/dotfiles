@@ -1,0 +1,5 @@
+alias prisma="npx prisma"
+alias reload="source ~/.config/zsh/.zshrc"
+alias k=kubectl
+alias ls=eza
+alias vim=nvim
