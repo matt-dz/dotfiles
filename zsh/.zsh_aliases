@@ -1,5 +1,25 @@
 alias prisma="npx prisma"
 alias reload="source ~/.config/zsh/.zshrc"
 alias k=kubectl
-alias ls=eza
-alias vim=nvim
+
+vim_alias () {
+	if command -v nvim >/dev/null 2>&1; then
+		alias vim='nvim'
+	fi
+}
+
+eza_alias () {
+	if command -v eza >/dev/null 2>&1; then
+    alias ls='eza'
+  fi
+}
+
+bat_alias () {
+	if command -v bat >/dev/null 2>&1; then
+		alias cat='bat'
+	fi
+}
+
+eza_alias
+bat_alias
+vim_alias
