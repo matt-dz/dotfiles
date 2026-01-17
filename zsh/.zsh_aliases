@@ -10,7 +10,7 @@ vim_alias () {
 
 eza_alias () {
 	if command -v eza >/dev/null 2>&1; then
-    alias ls='eza'
+    alias ls='eza --icons=always --color=always'
   fi
 }
 
