@@ -1,0 +1,32 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "show_edit_predictions": true,
+  "agent": {
+    "model_parameters": [],
+    "default_profile": "minimal",
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Ayu Light"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "soft_wrap": "editor_width",
+  "relative_line_numbers": true
+}

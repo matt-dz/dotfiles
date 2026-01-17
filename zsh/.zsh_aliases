@@ -1,6 +1,1 @@
-alias vim="nvim"
-alias nconf="nvim ~/.config/nvim/"
-alias gconf="cd ~/.config/nvim/"
-alias gdv="cd ~/Developer"
-alias prisma="npx prisma"
-alias reload="source ~/.config/zsh/.zshrc"
+/Users/matthewdeguzman/.zsh_aliases
