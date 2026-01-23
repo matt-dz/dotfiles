@@ -10,7 +10,10 @@ vim_alias () {
 
 eza_alias () {
 	if command -v eza >/dev/null 2>&1; then
-    alias ls='eza --icons=always --color=always'
+		alias ls='eza --icons=always --color=always -s type'
+		alias l='eza --icons=always --color=always -s type -a -l'
+		alias lt='eza --icons=always --color=always -s type --tree --level 2'
+		alias lg='eza --icons=always --color=always -s type -a -l --git-ignore'
   fi
 }
 
