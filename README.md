@@ -1,3 +1,3 @@
 # Dotfiles
 
-Configuration for my all system tools.
+Configuration for my system tools.
