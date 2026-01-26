@@ -317,17 +317,23 @@ tmux_conf_uninstall_plugins_on_reload=true
 # # /!\ do not remove the previous line
 # #     do not write below this line
 
-# Override catppuccin settings (must be before source)
-set -g @catppuccin_battery_icon "󰁹 "
-set -g @catppuccin_battery_text " #(pmset -g batt | grep -Eo '[0-9]+%%' | head -1)"
-set -g @catppuccin_window_text " #W"
-set -g @catppuccin_window_current_text " #W"
+# Plugins (Oh My Tmux handles TPM internally)
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-battery'
+set -g @plugin 'tmux-plugins/tmux-cpu'
 
-source ~/.config/tmux/plugins/catpuccin/catppuccin_options_tmux.conf
-source ~/.config/tmux/plugins/catpuccin/catppuccin_tmux.conf
+# Catppuccin settings (must be before loading catppuccin)
+set -g @catppuccin_flavor "mocha"
+set -g @catppuccin_window_status_style "rounded"
 
-# Configure catppuccin status line
-set -g status-left "#{E:@catppuccin_status_session}"
-set -g status-right "#{E:@catppuccin_status_battery}#{E:@catppuccin_status_directory}#{E:@catppuccin_status_date_time}"
-set -g status-left-length 100
+# Load catppuccin
+run '~/.tmux/catppuccin/catppuccin.tmux'
+
+# Status line (after catppuccin loads)
 set -g status-right-length 100
+set -g status-left-length 100
+set -g status-left ""
+set -g status-right "#{E:@catppuccin_status_application}"
+set -agF status-right "#{E:@catppuccin_status_cpu}"
+set -ag status-right "#{E:@catppuccin_status_session}"
+set -ag status-right "#{E:@catppuccin_status_uptime}"
