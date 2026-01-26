@@ -250,9 +250,9 @@ unbind %
 bind -r < swap-window -t -1\; select-window -t -1
 bind -r > swap-window -t +1\; select-window -t +1
 
-# Switch windows (Ctrl+h/l without prefix)
-bind -n C-h previous-window
-bind -n C-l next-window
+# Switch windows (prefix + h/l)
+bind h previous-window
+bind l next-window
 
 # display a message after toggling mouse support
 bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse" \; display 'mouse #{?#{mouse},on,off}'
