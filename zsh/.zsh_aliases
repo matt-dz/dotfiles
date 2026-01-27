@@ -23,6 +23,13 @@ bat_alias () {
 	fi
 }
 
+cd_alias () {
+	if typeset -f __zxoide_z >/dev/null 2>&1; then
+    alias cd='zoxide'
+  fi
+}
+
 eza_alias
 bat_alias
 vim_alias
+cd_alias

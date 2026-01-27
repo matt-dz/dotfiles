@@ -89,4 +89,4 @@ export NVM_DIR="$HOME/.nvm"
 
 
 . "$HOME/.local/bin/env"
-eval "$(zoxide init zsh --cmd cd)"
+eval "$(zoxide init zsh)"
