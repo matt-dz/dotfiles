@@ -250,6 +250,12 @@ unbind %
 bind -r < swap-window -t -1\; select-window -t -1
 bind -r > swap-window -t +1\; select-window -t +1
 
+# Unbind root-level h/l bindings that interfere with neovim
+unbind -T root C-h
+unbind -T root C-l
+unbind -T root M-h
+unbind -T root M-l
+
 # Switch windows (prefix + h/l)
 bind h previous-window
 bind l next-window
