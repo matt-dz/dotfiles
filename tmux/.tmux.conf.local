@@ -254,6 +254,12 @@ bind -r > swap-window -t +1\; select-window -t +1
 bind h previous-window
 bind l next-window
 
+# Switch panes (prefix + Ctrl+h/j/k/l, repeatable)
+bind -r C-h select-pane -L
+bind -r C-j select-pane -D
+bind -r C-k select-pane -U
+bind -r C-l select-pane -R
+
 # display a message after toggling mouse support
 bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse" \; display 'mouse #{?#{mouse},on,off}'
 
