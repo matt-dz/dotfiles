@@ -1,0 +1,34 @@
+{
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); dir=$(echo \"$input\" | jq -r '.workspace.current_dir'); user=$(whoami); host=$(hostname -s); time=$(date +%H:%M:%S); git_branch=$(cd \"$dir\" 2>/dev/null && git -c core.useBuiltinFSMonitor=false -c core.fsmonitor=false branch --show-current 2>/dev/null); if [ -n \"$git_branch\" ]; then printf \"\\033[36m(\\033[32m%s\\033[36m) on \\033[32m%s \\033[36m(\\033[33m%s\\033[36m) (\\033[36m%s\\033[90m@\\033[32m%s\\033[36m)\" \"$(basename \"$dir\")\" \"$git_branch\" \"$time\" \"$user\" \"$host\"; else printf \"\\033[36m(\\033[32m%s\\033[36m) (\\033[33m%s\\033[36m) (\\033[36m%s\\033[90m@\\033[32m%s\\033[36m)\" \"$(basename \"$dir\")\" \"$time\" \"$user\" \"$host\"; fi"
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v terminal-notifier >/dev/null && terminal-notifier -title 'Claude Code' -message 'Permission requested' -sound default"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v terminal-notifier >/dev/null && terminal-notifier -title 'Claude Code' -message 'Task completed' -sound default"
+          }
+        ]
+      }
+    ]
+  }
+}
