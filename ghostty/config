@@ -1,0 +1,5 @@
+keybind = shift+enter=text:\n
+
+# Hyperlink configuration
+# Automatically detect and underline URLs
+link-url = true
