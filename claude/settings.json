@@ -35,8 +35,6 @@
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "slack@claude-plugins-official": true,
-    "md-to-confluence@datadog-claude-plugins": true,
-    "gitlab@claude-plugins-official": true
+    "md-to-confluence@datadog-claude-plugins": true
   }
 }
