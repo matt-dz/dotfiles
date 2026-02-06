@@ -1,4 +1,4 @@
-# Claude Instructions
+# Instructions
 
 ## Identity
 
@@ -57,8 +57,3 @@
 - Do not mark tasks complete until outcomes are confirmed
 - When deploying or configuring systems, check the final state
 - If verification is not possible, clearly state what remains unconfirmed
-
-
-<claude-mem-context>
-
-</claude-mem-context>
