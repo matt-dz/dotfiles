@@ -18,6 +18,14 @@ export PATH="$PATH:/usr/local/bin/rust-analyzer"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# web-ui
+export DATADOG_ROOT="$HOME/dd"
+export PATH="$PATH:/$DATADOG_ROOT/devtools/bin"
+
+# Agents
+export CLAUDE_CONFIG_DIR="$HOME/.agents"
+export CODEX_HOME="$HOME/.agents"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -25,7 +33,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="jonathan"
+ZSH_THEME="amuse"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -91,5 +99,22 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-. "$HOME/.local/bin/env"
+# . "$HOME/.local/bin/env"
 eval "$(zoxide init zsh)"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/matthew.deguzman/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matthew.deguzman/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/matthew.deguzman/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matthew.deguzman/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Added by Yarn Switch
+export PATH="$VOLTA_HOME/bin:$PATH"
+source "/Users/matthew.deguzman/.yarn/switch/env"
+
+# Trajectory - AI coding agent observability
+export PATH="/Users/matthew.deguzman/.trajectory/bin:$PATH"
+
+path=(/opt/dogbrew/shims/bin /opt/dogbrew/bin ${${path:#/opt/dogbrew/shims/bin}:#/opt/dogbrew/bin}); fpath=(/opt/dogbrew/share/zsh/site-functions ${fpath:#/opt/dogbrew/share/zsh/site-functions}); case ":${MANPATH-}:" in *:'/opt/dogbrew/share/man':*) ;; *) export MANPATH='/opt/dogbrew/share/man':${MANPATH-} ;; esac # dogbrew shell setup
