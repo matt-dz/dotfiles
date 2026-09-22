@@ -1,3 +1,6 @@
+# Allow editors to watch large repositories without exhausting file descriptors.
+ulimit -n 10240 2>/dev/null || true
+
 # Emacs
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="$PATH:$(go env GOPATH)/bin"
